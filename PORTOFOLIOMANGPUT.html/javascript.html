@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Latihan JavaScript - MangPutt</title>
+    <link rel="stylesheet" href="javascript.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <h1>Latihan Praktik JavaScript</h1>
+        <p class="identitas">
+            I Komang Aditya Putra | XI RPL 2
+        </p>
+
+        <section class="hasil">
+            <h3>I.1 - Nama dan Kelas</h3>
+            <div id="hasil1"></div>
+        </section>
+
+        <section class="hasil">
+            <h3>I.2 - Variabel</h3>
+            <div id="hasil2"></div>
+        </section>
+
+        <section class="hasil">
+            <h3>I.3 - Operasi Aritmatika</h3>
+            <div id="hasil3"></div>
+        </section>
+
+        <section class="hasil">
+            <h3>I.4 - Kelulusan Nilai 90</h3>
+            <div id="hasil4"></div>
+        </section>
+
+        <section class="hasil">
+            <h3>I.5 - Kelulusan Nilai 60</h3>
+            <div id="hasil5"></div>
+        </section>
+
+        <section class="hasil">
+            <h3>J - Tantangan Mini</h3>
+            <div id="hasilJ"></div>
+        </section>
+
+        <!-- Kalkulator Lingkaran -->
+        <section class="hasil">
+            <h3>K - Kalkulator Lingkaran</h3>
+
+            <label for="jari">Jari-jari:</label>
+            <input type="number" id="jari"
+                   placeholder="Masukkan jari-jari" min="0" step="any">
+
+            <button type="button" onclick="hitungLingkaran()">
+                Hitung
+            </button>
+
+            <div id="hasilLingkaran"></div>
+        </section>
+
+        <!-- Kalkulator Segitiga -->
+        <section class="hasil">
+            <h3>L - Kalkulator Segitiga</h3>
+
+            <label for="alas">Alas:</label>
+            <input type="number" id="alas"
+                   placeholder="Masukkan alas" min="0" step="any">
+
+            <label for="tinggi">Tinggi:</label>
+            <input type="number" id="tinggi"
+                   placeholder="Masukkan tinggi" min="0" step="any">
+
+            <label for="sisiA">Sisi A:</label>
+            <input type="number" id="sisiA"
+                   placeholder="Masukkan sisi A" min="0" step="any">
+
+            <label for="sisiB">Sisi B:</label>
+            <input type="number" id="sisiB"
+                   placeholder="Masukkan sisi B" min="0" step="any">
+
+            <button type="button" onclick="hitungSegitiga()">
+                Hitung
+            </button>
+
+            <div id="hasilSegitiga"></div>
+        </section>
+
+        <!-- Kalkulator Persegi Panjang -->
+        <section class="hasil">
+            <h3>M - Kalkulator Persegi Panjang</h3>
+
+            <label for="panjang">Panjang:</label>
+            <input type="number" id="panjang"
+                   placeholder="Masukkan panjang" min="0" step="any">
+
+            <label for="lebar">Lebar:</label>
+            <input type="number" id="lebar"
+                   placeholder="Masukkan lebar" min="0" step="any">
+
+            <button type="button" onclick="hitungPersegiPanjang()">
+                Hitung
+            </button>
+
+            <div id="hasilPersegiPanjang"></div>
+        </section>
+
+        <footer>
+            © 2026 MangPutt
+        </footer>
+
+    </main>
+
+    <script>
+        // I.1 - Nama dan Kelas
+        let nama = "I Komang Aditya Putra";
+        let kelas = "XI RPL 2";
+
+        console.log(nama);
+        console.log("Kelas " + kelas);
+
+        document.getElementById("hasil1").innerHTML =
+            nama + "<br>Kelas " + kelas;
+
+
+        // I.2 - Variabel
+        let umur = 17;
+        let jurusan = "RPL";
+
+        console.log("Nama:", nama);
+        console.log("Umur:", umur);
+        console.log("Jurusan:", jurusan);
+
+        document.getElementById("hasil2").innerHTML =
+            "Nama: " + nama +
+            "<br>Umur: " + umur + " tahun" +
+            "<br>Jurusan: " + jurusan;
+
+
+        // I.3 - Operasi Aritmatika
+        let a = 20;
+        let b = 5;
+
+        console.log("Penjumlahan:", a + b);
+        console.log("Pengurangan:", a - b);
+        console.log("Perkalian:", a * b);
+        console.log("Pembagian:", a / b);
+
+        document.getElementById("hasil3").innerHTML =
+            "Penjumlahan: " + (a + b) +
+            "<br>Pengurangan: " + (a - b) +
+            "<br>Perkalian: " + (a * b) +
+            "<br>Pembagian: " + (a / b);
+
+
+        // I.4 - Kelulusan Nilai 90
+        let nilai = 90;
+        let status90;
+
+        if (nilai >= 75) {
+            status90 = "Lulus";
+        } else {
+            status90 = "Belum lulus";
+        }
+
+        console.log("Nilai:", nilai);
+        console.log("Status:", status90);
+
+        document.getElementById("hasil4").innerHTML =
+            "Nilai: " + nilai +
+            "<br>Status: " + status90;
+
+
+        // I.5 - Kelulusan Nilai 60
+        nilai = 60;
+        let status60;
+
+        if (nilai >= 75) {
+            status60 = "Lulus";
+        } else {
+            status60 = "Belum lulus";
+        }
+
+        console.log("Nilai:", nilai);
+        console.log("Status:", status60);
+
+        document.getElementById("hasil5").innerHTML =
+            "Nilai: " + nilai +
+            "<br>Status: " + status60;
+
+
+        // J - Tantangan Mini
+        let namaSiswa = "I Komang Aditya Putra";
+        let nilaiSiswa = 85;
+        let status;
+
+        if (nilaiSiswa >= 75) {
+            status = "Lulus";
+        } else {
+            status = "Belum lulus";
+        }
+
+        console.log("Nama siswa:", namaSiswa);
+        console.log("Nilai:", nilaiSiswa);
+        console.log("Status:", status);
+
+        document.getElementById("hasilJ").innerHTML =
+            "Nama siswa: " + namaSiswa +
+            "<br>Nilai: " + nilaiSiswa +
+            "<br>Status: " + status;
+
+
+        // K - Kalkulator Lingkaran
+        function hitungLingkaran() {
+            let input = document.getElementById("jari").value;
+            let hasil = document.getElementById("hasilLingkaran");
+
+            if (input.trim() === "") {
+                hasil.textContent = "Masukkan jari-jari terlebih dahulu!";
+                return;
+            }
+
+            let r = Number(input);
+
+            if (!Number.isFinite(r) || r <= 0) {
+                hasil.textContent = "Jari-jari harus lebih besar dari 0!";
+                return;
+            }
+
+            let luas = Math.PI * r * r;
+            let keliling = 2 * Math.PI * r;
+
+            hasil.innerHTML =
+                "<br>Luas: " + luas.toFixed(2) +
+                "<br>Keliling: " + keliling.toFixed(2);
+        }
+
+
+        // L - Kalkulator Segitiga
+        function hitungSegitiga() {
+            let inputAlas = document.getElementById("alas").value;
+            let inputTinggi = document.getElementById("tinggi").value;
+            let inputSisiA = document.getElementById("sisiA").value;
+            let inputSisiB = document.getElementById("sisiB").value;
+
+            let hasil = document.getElementById("hasilSegitiga");
+
+            if (
+                inputAlas.trim() === "" ||
+                inputTinggi.trim() === "" ||
+                inputSisiA.trim() === "" ||
+                inputSisiB.trim() === ""
+            ) {
+                hasil.textContent = "Isi semua ukuran segitiga terlebih dahulu!";
+                return;
+            }
+
+            let alas = Number(inputAlas);
+            let tinggi = Number(inputTinggi);
+            let sisiA = Number(inputSisiA);
+            let sisiB = Number(inputSisiB);
+
+            if (
+                ![alas, tinggi, sisiA, sisiB].every(Number.isFinite) ||
+                alas <= 0 || tinggi <= 0 || sisiA <= 0 || sisiB <= 0
+            ) {
+                hasil.textContent = "Semua ukuran harus lebih besar dari 0!";
+                return;
+            }
+
+            if (
+                alas + sisiA <= sisiB ||
+                alas + sisiB <= sisiA ||
+                sisiA + sisiB <= alas
+            ) {
+                hasil.textContent = "Panjang sisi tidak membentuk segitiga!";
+                return;
+            }
+
+            let luas = 0.5 * alas * tinggi;
+            let keliling = alas + sisiA + sisiB;
+
+            hasil.innerHTML =
+                "<br>Luas: " + luas.toFixed(2) +
+                "<br>Keliling: " + keliling.toFixed(2);
+        }
+
+
+        // M - Kalkulator Persegi Panjang
+        function hitungPersegiPanjang() {
+            let inputPanjang = document.getElementById("panjang").value;
+            let inputLebar = document.getElementById("lebar").value;
+
+            let hasil = document.getElementById("hasilPersegiPanjang");
+
+            if (
+                inputPanjang.trim() === "" ||
+                inputLebar.trim() === ""
+            ) {
+                hasil.textContent = "Isi panjang dan lebar terlebih dahulu!";
+                return;
+            }
+
+            let panjang = Number(inputPanjang);
+            let lebar = Number(inputLebar);
+
+            if (
+                !Number.isFinite(panjang) ||
+                !Number.isFinite(lebar) ||
+                panjang <= 0 || lebar <= 0
+            ) {
+                hasil.textContent = "Panjang dan lebar harus lebih besar dari 0!";
+                return;
+            }
+
+            let luas = panjang * lebar;
+            let keliling = 2 * (panjang + lebar);
+
+            hasil.innerHTML =
+                "<br>Luas: " + luas.toFixed(2) +
+                "<br>Keliling: " + keliling.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+ body {
+        text-align: center;
+        background-color: rgba(226, 134, 43, 0.599);
+    }
+
+     .olok {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    table {
+        margin: 20px auto;
+        border-collapse:collapse;
+        width: 50%;
+        
+
+    }
+tr {
+
+    border: 1px color(srgb red green blue);
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.next {
+    background-color: deeppink;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.next:hover {
+    background-color: rgb(131, 255, 7);
+
+}
+
+
+/* Mengatur tampilan bagian video */
+.video-container {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+/* Mengatur judul video */
+.video-container h2 {
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Mengatur ukuran video YouTube */
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 8px;
+}
+
